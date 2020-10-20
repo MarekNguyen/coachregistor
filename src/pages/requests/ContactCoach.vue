@@ -1,3 +1,3 @@
 <template>
-contact coach
+contact coach test
 </template>
