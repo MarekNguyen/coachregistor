@@ -6,8 +6,8 @@
         <app-badge v-for="area in areas" :key="area" :type="area" :title="area">{{ area }}</app-badge>
     </div>
     <div class="actions">
-        <app-button mode="outline" link :to="coachContactLink">Contact</app-button>
-        <app-button link :to="coachDetailsLink">View Details</app-button>
+        <app-button mode="outline" :link="true" :to="coachContactLink">Contact</app-button>
+        <app-button :link="true" :to="coachDetailsLink">View Details</app-button>
     </div>
 </li>
 </template>
