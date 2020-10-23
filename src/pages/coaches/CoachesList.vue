@@ -7,7 +7,7 @@
         <app-card>
             <div class="controls">
                 <app-button mode="outline">Refresh</app-button>
-                <app-button :link="true" :to="'/register'">Register as Coach</app-button>
+                <app-button :link="true" :to="'/register'" v-if="!isCoach">Register as Coach</app-button>
             </div>
             <ul v-if="hasCoaches">
                 <coach-item v-for="coach in filteredCoaches" :key="coach.id" :id="coach.id" :firstName="coach.firstName" :lastName="coach.lastName" :rate="coach.hourlyRate" :areas="coach.areas"></coach-item>
@@ -53,6 +53,9 @@ export default {
         },
         hasCoaches() {
             return this.$store.getters['coaches/hasCoaches']
+        },
+        isCoach() {
+            return this.$store.getters['coaches/isCoach']
         }
     },
     methods: {
